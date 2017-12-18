@@ -36,16 +36,16 @@ class LINE:
 
     self.authToken = self.Talk.authToken
     self.cert = self.Talk.cert
-
+    
     self.Poll = Poll(self.authToken)
-    self.channel = channel.Channel(self.authToken)
-    self.channel.login()
+    #self.channel = channel.Channel(self.authToken)
+    #self.channel.login()
 
-    self.mid = self.channel.mid
-    self.channel_access_token = self.channel.channel_access_token
-    self.token = self.channel.token
-    self.obs_token = self.channel.obs_token
-    self.refresh_token = self.channel.refresh_token
+    #self.mid = self.channel.mid
+    #self.channel_access_token = self.channel.channel_access_token
+    #self.token = self.channel.token
+    #self.obs_token = self.channel.obs_token
+    #self.refresh_token = self.channel.refresh_token
 
 
   """User"""
@@ -114,9 +114,6 @@ class LINE:
             raise Exception('Upload image failure.')
         #r.content
         return True
-  def removeAllMessages(self, lastMessageId):
-	return self.Talk.client.removeAllMessages(0, lastMessageId)
-
   def sendEvent(self, messageObject):
         return self._client.sendEvent(0, messageObject)
 
@@ -193,20 +190,11 @@ class LINE:
   def getHiddenContactMids(self):
         return self.Talk.client.getHiddenContactMids()
 
-  def CloneContactProfile(self, mid):
-	contact = self.getContact(mid)
-	profile = self.getProfile()
-	profile.displayName = contact.displayName
-	profile.statusMessage = contact.statusMessage
-	profile.pictureStatus = contact.pictureStatus
-	self.updateDisplayPicture(profile.pictureStatus)
-	return self.updateProfile(profile)
 
-  def updateDisplayPicture(self, hash_id):
-	return self.Talk.client.updateProfileAttribute(0, 8, hash_id)
+  """Group"""
 
-
-  """Group"""                                                                                                                                                         
+  def findGroupByTicket(self, ticketId):
+        return self.Talk.client.findGroupByTicket(ticketId)
 
   def acceptGroupInvitation(self, groupId):
         return self.Talk.client.acceptGroupInvitation(0, groupId)
@@ -323,10 +311,7 @@ class LINE:
 
       prof = self.getProfile()
 
-      print("==============[C-A_Bot]==============")
-      print("     Thanks for TCR and my friend")
-      print("=====================================")
-      print("mid -> " + prof.mid)
-      print("name -> " + prof.displayName)
-      print("authToken -> " + self.authToken)
-      print("cert -> " + self.cert if self.cert is not None else "")
+      print("\nMid Kamu -> " + prof.mid)
+      print("\nNama Akun -> " + prof.displayName)
+      print("\nAuthToken Kamu -> " + self.authToken)
+      print("\nCert Kamu -> " + self.cert if self.cert is not None else "\nMau Tanya Lebih?\nline://ti/p/~yapuyy")
