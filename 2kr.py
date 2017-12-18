@@ -20,7 +20,7 @@ from threading import Thread
 
 cl = LINETCR.LINE()
 #cl.login(qr=True)
-cl.login(token='')
+cl.login(token='EnMSoUnjFgpOBOLcklKc.88Z7JrMt93dBvvGdCX+Jta.UrxXIvbgzbHS9Dd2lRinsgnANG6xk1bbIvq9qdW4oO4=')
 #cl.login(token="")#1beby
 cl.loginResult()
 
