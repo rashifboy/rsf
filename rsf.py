@@ -51,13 +51,6 @@ Use command in group's and with uppercase
 °Time
 °Runtime
 
-∆Spam command∆
-°Cbroadcast..
-°Gbroadcast..
-°Spam...
-°Spamcontact @
-°Spamtag @
-
 ∆In group command∆
 °Mention
 °Ourl
