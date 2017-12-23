@@ -23,6 +23,8 @@ reload(sys)
 sys.setdefaultencoding('utf-8')
 
 helpmsg ="""✍RashiF self bot's✺
+
+Use coomand in group's and use uppercase
 ∆Self command∆
 °Google..
 °Playstore..
